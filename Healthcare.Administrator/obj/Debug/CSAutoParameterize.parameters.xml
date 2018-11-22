@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="SmartChecfDbContext-Web.config Connection String" description="SmartChecfDbContext Connection String used in web.config by the application to access the database." defaultValue="data source=smartchefdb.cuepzsy2ydvr.ap-south-1.rds.amazonaws.com;initial catalog=HealthcareAdministrator;user id=Admin;password=AdminPassword123;MultipleActiveResultSets=True;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\sunilp\\Documents\\Visual\ Studio\ 2015\\Projects\\Healthcare\.Administrator\\Healthcare\.Administrator\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SmartChecfDbContext']/@connectionString" />
-  </parameter>
-</parameters>

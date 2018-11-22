@@ -21,6 +21,13 @@ namespace Healthcare.Administrator.Service
         /// </summary>
         private IBaseRepository<PatientPopulationData> _patientPopulationData;
 
+        /// <summary>
+        /// Constructor 
+        /// </summary>
+        public UnitOfWork()
+        {
+            _dbContext = new SmartChefDbContext();
+        }
         /// <inheritdoc />
         /// <summary>
         /// This method will 

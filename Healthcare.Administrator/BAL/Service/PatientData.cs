@@ -31,6 +31,8 @@ namespace Healthcare.Administrator.BAL.Service
         public List<PatientDataResponseDto> GetPatientData()
         {
             List<PatientDataResponseDto> patientDataResponseDto = new List<PatientDataResponseDto>();
+            var obj= _iunitOfWork.PatientPopulationDataRepository.Get().ToList();
+
             return _iunitOfWork.PatientPopulationDataRepository.Get().ToList().Select(ptData => new PatientDataResponseDto
             {
                 PatientName = ptData?.Patient_Name,
@@ -42,7 +44,7 @@ namespace Healthcare.Administrator.BAL.Service
                 State = ptData?.State,
                 ZipCode = Convert.ToString(ptData?.ZipCode),
                 PCP = ptData.PCP,
-                BMI = Convert.ToString(ptData.BMI),
+                BMI = Convert.ToString(ptData?.BMI),
                 DiabetesLevel = Convert.ToString(ptData?.Diabetes_Level),
                 Date = Convert.ToString(ptData?.Date),
                 Date1 = Convert.ToString(ptData?.Date1),

@@ -408,6 +408,11 @@
             Variable for Audit repository
             </summary>
         </member>
+        <member name="M:Healthcare.Administrator.Service.UnitOfWork.#ctor">
+            <summary>
+            Constructor 
+            </summary>
+        </member>
         <member name="M:Healthcare.Administrator.Service.UnitOfWork.Save">
             <inheritdoc />
             <summary>

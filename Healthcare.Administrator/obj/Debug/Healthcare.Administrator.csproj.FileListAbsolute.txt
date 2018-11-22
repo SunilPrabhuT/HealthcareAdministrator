@@ -104,4 +104,3 @@ c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\H
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\bin\Unity.Interception.Configuration.pdb
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\bin\Unity.RegistrationByConvention.pdb
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\bin\Unity.ServiceLocation.pdb
-C:\Users\sunilp\Documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\obj\Debug\Healthcare.Administrator.csprojResolveAssemblyReference.cache

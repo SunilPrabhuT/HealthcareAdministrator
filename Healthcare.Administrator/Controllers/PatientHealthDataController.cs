@@ -30,8 +30,8 @@ namespace Healthcare.Administrator.Controllers
         /// Gets the Patient Data
         /// </summary>
         /// <returns></returns>
-        [Authorize]
         [HttpPost]
+        [Authorize]
         [Route("GetPatientData")]
         public IHttpActionResult GetPatientData()
         {
