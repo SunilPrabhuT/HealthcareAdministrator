@@ -262,16 +262,19 @@
     <Compile Include="Auth\Infrastructure\ApplicationUserManager.cs" />
     <Compile Include="Auth\Providers\CustomJwtFormat.cs" />
     <Compile Include="Auth\Providers\CustomOAuthProvider.cs" />
+    <Compile Include="BAL\Interface\IPatientData.cs" />
+    <Compile Include="BAL\Service\PatientData.cs" />
+    <Compile Include="Controllers\PatientHealthDataController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\Interface\IBaseRepository.cs" />
     <Compile Include="DAL\Interface\IUnitOfWork.cs" />
-    <Compile Include="DAL\Model\AspNetRoles.cs" />
-    <Compile Include="DAL\Model\AspNetUserClaims.cs" />
-    <Compile Include="DAL\Model\AspNetUserLogins.cs" />
-    <Compile Include="DAL\Model\AspNetUsers.cs" />
-    <Compile Include="DAL\Model\C__MigrationHistory.cs" />
-    <Compile Include="DAL\Model\Logs.cs" />
-    <Compile Include="DAL\Model\SmartChecfDbContext.cs" />
+    <Compile Include="DAL\Model\AspNetRole.cs" />
+    <Compile Include="DAL\Model\AspNetUser.cs" />
+    <Compile Include="DAL\Model\AspNetUserClaim.cs" />
+    <Compile Include="DAL\Model\AspNetUserLogin.cs" />
+    <Compile Include="DAL\Model\Log.cs" />
+    <Compile Include="DAL\Model\PatientPopulationData.cs" />
+    <Compile Include="DAL\Model\SmartChefDbContext.cs" />
     <Compile Include="DAL\Service\SmartChefRepository.cs" />
     <Compile Include="DAL\Service\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,8 +297,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="BAL\Interface\" />
-    <Folder Include="BAL\Service\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

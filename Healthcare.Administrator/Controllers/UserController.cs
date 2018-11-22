@@ -22,9 +22,7 @@ namespace Healthcare.Administrator.Controllers
         [Route("GetUserName")]
         public IHttpActionResult GetUsername(string userName)
         {
-            if (userName == "1")
-                throw new System.Exception("An error has occured");
-            return Ok("Hi");
+            return Ok(userName);
         }
     }
 }

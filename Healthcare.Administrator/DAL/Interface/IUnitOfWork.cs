@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Healthcare.Administrator.DAL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,10 @@ namespace Healthcare.Administrator.Interface
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
+        /// <summary>
+        /// The user respository
+        /// </summary>
+        IBaseRepository<PatientPopulationData> PatientPopulationDataRepository { get; }
         /// <summary>
         /// Saves the record to Db
         /// </summary>

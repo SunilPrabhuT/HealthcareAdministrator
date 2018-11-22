@@ -14,8 +14,13 @@ namespace Healthcare.Administrator.Service
         /// <summary>
         /// CascadeDb context
         /// </summary>
-        private readonly SmartChecfDbContext _dbContext;
-        
+        private readonly SmartChefDbContext _dbContext;
+
+        /// <summary>
+        /// Variable for Audit repository
+        /// </summary>
+        private IBaseRepository<PatientPopulationData> _patientPopulationData;
+
         /// <inheritdoc />
         /// <summary>
         /// This method will 
@@ -35,6 +40,13 @@ namespace Healthcare.Administrator.Service
             }
         }
         private bool _disposed;
+
+        /// <inheritdoc />
+        /// <summary>
+        ///  Repository for OrderFormType
+        /// </summary>
+        public IBaseRepository<PatientPopulationData> PatientPopulationDataRepository => _patientPopulationData ?? (_patientPopulationData =
+                                                                                        new SmartChefRepository<PatientPopulationData>(_dbContext));
         /// <summary>
         /// Disposes the object
         /// </summary>

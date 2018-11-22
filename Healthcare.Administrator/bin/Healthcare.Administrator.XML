@@ -185,6 +185,17 @@
             <param name="context" />
             <returns />
         </member>
+        <member name="T:Healthcare.Administrator.Controllers.PatientHealthDataController">
+            <summary>
+            User Controller
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.PatientHealthDataController.GetPatientData">
+            <summary>
+            Gets the Patient Data
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Healthcare.Administrator.Controllers.UserController">
             <summary>
             User Controller
@@ -253,9 +264,99 @@
             IUnitOfWork interface
             </summary>
         </member>
+        <member name="P:Healthcare.Administrator.Interface.IUnitOfWork.PatientPopulationDataRepository">
+            <summary>
+            The user respository
+            </summary>
+        </member>
         <member name="M:Healthcare.Administrator.Interface.IUnitOfWork.Save">
             <summary>
             Saves the record to Db
+            </summary>
+        </member>
+        <member name="T:Healthcare.Administrator.Service.SmartChefRepository`1">
+            <summary>
+            Base Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="F:Healthcare.Administrator.Service.SmartChefRepository`1.context">
+            <summary>
+            The CascadeDbContext variable
+            </summary>
+        </member>
+        <member name="F:Healthcare.Administrator.Service.SmartChefRepository`1.dbSet">
+            <summary>
+            The dbSet variable
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.#ctor(Healthcare.Administrator.DAL.Model.SmartChefDbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String)">
+            <summary>
+            Generic function to get all the
+            matching records as per filter criteria
+            </summary>
+            <param name="filter"></param>
+            <param name="orderBy"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.GetById(System.Object)">
+            <summary>
+            Generic function to get the
+            matching records By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Insert(`0)">
+            <summary>
+            Generic function to get insert the
+            record to the db
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Delete(System.Object)">
+            <summary>
+            Generic function to delete the
+            record from db by matching the Id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Delete(`0)">
+            <summary>
+            Generic function to delete the
+            record from db by matching the entity
+            </summary>
+            <param name="entityToDelete"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Update(`0)">
+            <summary>
+            Generic function to update the
+            record from db by matching the entity
+            </summary>
+            <param name="entityToUpdate"></param>
+        </member>
+        <member name="F:Healthcare.Administrator.Service.SmartChefRepository`1.disposed">
+            <summary>
+            The disposes variable
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Dispose(System.Boolean)">
+            <summary>
+            Disposes the entity
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.Service.SmartChefRepository`1.Dispose">
+            <summary>
+            The disposes variable
+            by suppressing the finalize
             </summary>
         </member>
         <member name="T:Healthcare.Administrator.Service.UnitOfWork">
@@ -270,12 +371,23 @@
             CascadeDb context
             </summary>
         </member>
+        <member name="F:Healthcare.Administrator.Service.UnitOfWork._patientPopulationData">
+            <summary>
+            Variable for Audit repository
+            </summary>
+        </member>
         <member name="M:Healthcare.Administrator.Service.UnitOfWork.Save">
             <inheritdoc />
             <summary>
             This method will 
             insert/update
             the entries to the Db
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Service.UnitOfWork.PatientPopulationDataRepository">
+            <inheritdoc />
+            <summary>
+             Repository for OrderFormType
             </summary>
         </member>
         <member name="M:Healthcare.Administrator.Service.UnitOfWork.Dispose(System.Boolean)">

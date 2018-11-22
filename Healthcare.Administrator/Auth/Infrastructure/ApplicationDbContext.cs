@@ -18,7 +18,7 @@ namespace Healthcare.Administrator.Infrastructure
         /// The context class
         /// </summary>
         public ApplicationDbContext()
-            : base("SmartChecfDbContext", throwIfV1Schema: false)
+            : base("SmartChefDbContext", throwIfV1Schema: false)
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
