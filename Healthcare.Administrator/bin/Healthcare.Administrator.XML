@@ -185,10 +185,42 @@
             <param name="context" />
             <returns />
         </member>
+        <member name="T:Healthcare.Administrator.BAL.Service.PatientData">
+            <summary>
+            PatientData
+            </summary>
+        </member>
+        <member name="F:Healthcare.Administrator.BAL.Service.PatientData._iunitOfWork">
+            <summary>
+            The IUnitOfWork variable
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.PatientData.#ctor(Healthcare.Administrator.Interface.IUnitOfWork)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.PatientData.GetPatientData">
+            <summary>
+            Gets the Patient Data
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Healthcare.Administrator.Controllers.PatientHealthDataController">
             <summary>
             User Controller
             </summary>
+        </member>
+        <member name="F:Healthcare.Administrator.Controllers.PatientHealthDataController._iPatientData">
+            <summary>
+            The IPatientData variable
+            </summary>
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.PatientHealthDataController.#ctor(Healthcare.Administrator.BAL.Interface.IPatientData)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="IPatientData"></param>
         </member>
         <member name="M:Healthcare.Administrator.Controllers.PatientHealthDataController.GetPatientData">
             <summary>
@@ -400,6 +432,156 @@
             <summary>
             Disposes the Object By
             Supressing the Finalize 
+            </summary>
+        </member>
+        <member name="T:Healthcare.Administrator.Models.Request.PatientDataRequestDto">
+            <summary>
+            PatientDataRequestDto
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Request.PatientDataRequestDto.Username">
+            <summary>
+            Username Field
+            </summary>
+        </member>
+        <member name="T:Healthcare.Administrator.Models.Response.PatientDataResponseDto">
+            <summary>
+            PatientDataResponseDto
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PatientName">
+            <summary>
+            PatientName field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.MemberDependent">
+            <summary>
+            MemberDependent field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Gender">
+            <summary>
+            Gender field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.DOB">
+            <summary>
+            DOB Field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Country">
+            <summary>
+            Country Field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.City">
+            <summary>
+            City Field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.State">
+            <summary>
+            State Field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.ZipCode">
+            <summary>
+            ZipCode field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PCP">
+            <summary>
+            PCP field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.BMI">
+            <summary>
+            BMI field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.DiabetesLevel">
+            <summary>
+            DiabetesLevel field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Systolic">
+            <summary>
+            Systolic field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Diastolic">
+            <summary>
+            Diastolic field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Smoking">
+            <summary>
+            Smoking field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Pyscian">
+            <summary>
+            Pyscian field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Nurse">
+            <summary>
+            Nurse field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.InitialFinding1">
+            <summary>
+            InitialFinding1 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PreviousFinding1">
+            <summary>
+            PreviousFinding1 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PreviousFinding2">
+            <summary>
+            PreviousFinding2 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PreviousFinding3">
+            <summary>
+            PreviousFinding3 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PreviousFinding4">
+            <summary>
+            PreviousFinding4 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.CurrentFindings">
+            <summary>
+            PreviousFinding4 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date">
+            <summary>
+            CurrentFindings field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date1">
+            <summary>
+            Date1 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date2">
+            <summary>
+            Date2 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date3">
+            <summary>
+            Date3 field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date4">
+            <summary>
+            Date4 field
             </summary>
         </member>
         <member name="T:Healthcare.Administrator.Startup">

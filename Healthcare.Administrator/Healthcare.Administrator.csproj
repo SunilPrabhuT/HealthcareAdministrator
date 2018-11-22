@@ -277,6 +277,8 @@
     <Compile Include="DAL\Model\SmartChefDbContext.cs" />
     <Compile Include="DAL\Service\SmartChefRepository.cs" />
     <Compile Include="DAL\Service\UnitOfWork.cs" />
+    <Compile Include="Models\Request\PatientDataRequestDto.cs" />
+    <Compile Include="Models\Response\PatientDataResponseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnityResolver.cs" />
@@ -297,7 +299,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

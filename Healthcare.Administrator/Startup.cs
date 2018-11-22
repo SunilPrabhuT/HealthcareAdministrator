@@ -1,5 +1,9 @@
-﻿using Healthcare.Administrator.Infrastructure;
+﻿using Healthcare.Administrator.BAL.Interface;
+using Healthcare.Administrator.BAL.Service;
+using Healthcare.Administrator.Infrastructure;
+using Healthcare.Administrator.Interface;
 using Healthcare.Administrator.Providers;
+using Healthcare.Administrator.Service;
 using Healthcare.Administrator.Utility;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -15,6 +19,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using Unity;
+using Unity.Lifetime;
 
 namespace Healthcare.Administrator
 {
@@ -111,8 +116,9 @@ namespace Healthcare.Administrator
         private void DependancyResolve(HttpConfiguration config)
         {
             var container = new UnityContainer();
-           // container.RegisterType<IUserDetails, User>(new TransientLifetimeManager());
-           
+            // container.RegisterType<IUserDetails, User>(new TransientLifetimeManager());
+            container.RegisterType<IPatientData, PatientData>(new TransientLifetimeManager());
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new TransientLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }

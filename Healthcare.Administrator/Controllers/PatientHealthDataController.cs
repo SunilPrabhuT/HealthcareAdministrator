@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Healthcare.Administrator.BAL.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,14 +15,27 @@ namespace Healthcare.Administrator.Controllers
     public class PatientHealthDataController : ApiController
     {
         /// <summary>
+        /// The IPatientData variable
+        /// </summary>
+        private readonly IPatientData _iPatientData;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="IPatientData"></param>
+        public PatientHealthDataController(IPatientData IPatientData)
+        {
+            _iPatientData = IPatientData;
+        }
+        /// <summary>
         /// Gets the Patient Data
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         [Route("GetPatientData")]
         public IHttpActionResult GetPatientData()
         {
-            return Ok("hi");
+            return Ok(_iPatientData.GetPatientData());
         }
     }
 }
