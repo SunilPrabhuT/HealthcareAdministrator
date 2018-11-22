@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
-using System.IdentityModel.Tokens;
 using Thinktecture.IdentityModel.Tokens;
+using System.IdentityModel.Tokens;
 
 namespace Healthcare.Administrator.Providers
 {
@@ -55,18 +55,19 @@ namespace Healthcare.Administrator.Providers
 
             var expires = data.Properties.ExpiresUtc;
 
-            var token = new JwtSecurityToken(_issuer, audienceId, data.Identity.Claims, issued.Value.UtcDateTime,
-                expires.Value.UtcDateTime, signingKey);
+            //var token = new JwtSecurityToken(_issuer, audienceId, data.Identity.Claims, issued.Value.UtcDateTime,
+            //    expires.Value.UtcDateTime, signingKey);
 
             // var stringName = token.Payload.Where(i => i.Key == "nameid").Select(i => i.Value).FirstOrDefault();
 
 
-            var handler = new JwtSecurityTokenHandler();
+            //var handler = new JwtSecurityTokenHandler();
 
-            var jwt = handler.WriteToken(token);
+            //var jwt = handler.WriteToken(token);
 
             // Write the Jwt Token 
-            return jwt;
+            //return jwt;
+            return null;
         }
         /// <summary>
         /// Unprotects the token

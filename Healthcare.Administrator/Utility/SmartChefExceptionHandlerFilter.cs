@@ -25,7 +25,7 @@ namespace Healthcare.Administrator.Utility
         /// <returns></returns>
         public override async Task HandleAsync(ExceptionHandlerContext context, CancellationToken cancellationToken)
         {
-            var  connectionString = ConfigurationManager.ConnectionStrings["SmartChecfDbContext"].ConnectionString;
+            var  connectionString = ConfigurationManager.ConnectionStrings["SmartChefDbContext"].ConnectionString;
             var tableName = ConfigurationManager.AppSettings["logTable"];
 
             var columnOption = new ColumnOptions();

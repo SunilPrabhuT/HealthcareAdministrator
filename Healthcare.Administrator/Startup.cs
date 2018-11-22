@@ -1,5 +1,9 @@
-﻿using Healthcare.Administrator.Infrastructure;
+﻿using Healthcare.Administrator.BAL.Interface;
+using Healthcare.Administrator.BAL.Service;
+using Healthcare.Administrator.Infrastructure;
+using Healthcare.Administrator.Interface;
 using Healthcare.Administrator.Providers;
+using Healthcare.Administrator.Service;
 using Healthcare.Administrator.Utility;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -15,6 +19,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using Unity;
+using Unity.Lifetime;
 
 namespace Healthcare.Administrator
 {
@@ -80,17 +85,17 @@ namespace Healthcare.Administrator
 
             // Api controllers with an [Authorize] attribute will be validated with JWT
            
-            app.UseJwtBearerAuthentication(
-                new JwtBearerAuthenticationOptions
-                {
+            //app.UseJwtBearerAuthentication(
+            //    new JwtBearerAuthenticationOptions
+            //    {
 
-                    AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active,
-                    AllowedAudiences = new[] { audienceId },
-                    IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
-                    {
-                        new SymmetricKeyIssuerSecurityTokenProvider(issuer, audienceSecret)
-                    }
-                });
+            //        AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active,
+            //        AllowedAudiences = new[] { audienceId },
+            //        IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
+            //        {
+            //            new SymmetricKeyIssuerSecurityTokenProvider(issuer, audienceSecret)
+            //        }
+            //    });
         }
         /// <summary>
         /// Configures the Webapi and Unity container resolve
@@ -111,8 +116,9 @@ namespace Healthcare.Administrator
         private void DependancyResolve(HttpConfiguration config)
         {
             var container = new UnityContainer();
-           // container.RegisterType<IUserDetails, User>(new TransientLifetimeManager());
-           
+            // container.RegisterType<IUserDetails, User>(new TransientLifetimeManager());
+            container.RegisterType<ISmsData, SmsData>(new TransientLifetimeManager());
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new TransientLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }

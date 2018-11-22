@@ -21,6 +21,19 @@ namespace Healthcare.Administrator.Service
         /// </summary>
         private IBaseRepository<PatientPopulationData> _patientPopulationData;
 
+        /// <summary>
+        /// Constructor 
+        /// </summary>
+        public UnitOfWork()
+        {
+            _dbContext = new SmartChefDbContext();
+        }
+
+        /// <summary>
+        /// Variable for Audit repository
+        /// </summary>
+        private IBaseRepository<SmsLog> _smsLogData;
+
         /// <inheritdoc />
         /// <summary>
         /// This method will 
@@ -43,10 +56,16 @@ namespace Healthcare.Administrator.Service
 
         /// <inheritdoc />
         /// <summary>
-        ///  Repository for OrderFormType
+        ///  Repository for PatientPopulationData
         /// </summary>
         public IBaseRepository<PatientPopulationData> PatientPopulationDataRepository => _patientPopulationData ?? (_patientPopulationData =
                                                                                         new SmartChefRepository<PatientPopulationData>(_dbContext));
+
+        /// <inheritdoc />
+        /// <summary>
+        ///  Repository for SMSLogData
+        /// </summary>
+        public IBaseRepository<SmsLog> SmsLogDataRepository => _smsLogData ?? (_smsLogData =new SmartChefRepository<SmsLog>(_dbContext));
         /// <summary>
         /// Disposes the object
         /// </summary>

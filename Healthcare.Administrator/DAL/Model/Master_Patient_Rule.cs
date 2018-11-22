@@ -6,20 +6,18 @@ namespace Healthcare.Administrator.DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class AspNetUserLogin
+    public partial class Master_Patient_Rule
     {
         [Key]
         [Column(Order = 0)]
-        public string LoginProvider { get; set; }
+        public string Id { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        public string ProviderKey { get; set; }
+        public string RuleId { get; set; }
 
         [Key]
         [Column(Order = 2)]
-        public string UserId { get; set; }
-
-        public virtual AspNetUser AspNetUser { get; set; }
+        public string PatientId { get; set; }
     }
 }

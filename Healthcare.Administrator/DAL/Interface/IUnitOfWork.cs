@@ -16,6 +16,11 @@ namespace Healthcare.Administrator.Interface
         /// The user respository
         /// </summary>
         IBaseRepository<PatientPopulationData> PatientPopulationDataRepository { get; }
+
+        /// <summary>
+        /// The user respository
+        /// </summary>
+        IBaseRepository<SmsLog> SmsLogDataRepository { get; }
         /// <summary>
         /// Saves the record to Db
         /// </summary>
