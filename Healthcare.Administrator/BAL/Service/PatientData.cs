@@ -65,9 +65,9 @@ namespace Healthcare.Administrator.BAL.Service
             }).ToList();
         }
 
-        private List<PatientRuleResponseDto> GetRulesByPatientId(int patientId)
-        {
-           // return _iunitOfWork.
-        }
+        //private List<PatientRuleResponseDto> GetRulesByPatientId(int patientId)
+        //{
+        //   // return _iunitOfWork.
+        //}
     }
 }
