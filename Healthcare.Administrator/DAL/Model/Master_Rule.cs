@@ -6,15 +6,15 @@ namespace Healthcare.Administrator.DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Master-Rule")]
     public partial class Master_Rule
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
-        [StringLength(10)]
-        public string Rule { get; set; }
+        [StringLength(500)]
+        public string Rules { get; set; }
 
-        [StringLength(128)]
-        public string Disease { get; set; }
+        public Guid? DiseaseId { get; set; }
+
+        public virtual Master_Diseases Master_Diseases { get; set; }
     }
 }

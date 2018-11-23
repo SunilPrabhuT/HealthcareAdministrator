@@ -34,6 +34,17 @@ namespace Healthcare.Administrator.Service
         /// </summary>
         private IBaseRepository<SmsLog> _smsLogData;
 
+        /// <summary>
+        /// Variable for Audit repository
+        /// </summary>
+        private IBaseRepository<Master_Patient_Rule> _patientRuleRepo;
+        /// <summary>
+        /// Gets 
+        /// </summary>
+        /// <value></value>
+        /// <remarks></remarks>
+        private IBaseRepository<Master_Rule> _ruleRepository;
+
         /// <inheritdoc />
         /// <summary>
         /// This method will 
@@ -66,6 +77,20 @@ namespace Healthcare.Administrator.Service
         ///  Repository for SMSLogData
         /// </summary>
         public IBaseRepository<SmsLog> SmsLogDataRepository => _smsLogData ?? (_smsLogData =new SmartChefRepository<SmsLog>(_dbContext));
+
+
+        /// <inheritdoc />
+        /// <summary>
+        ///  Repository for PatientRuleRepository
+        /// </summary>
+        public IBaseRepository<Master_Patient_Rule> PatientRuleRepository => _patientRuleRepo ?? (_patientRuleRepo = new SmartChefRepository<Master_Patient_Rule>(_dbContext));
+
+        /// <inheritdoc />
+        /// <summary>
+        ///  Repository for RuleRepository
+        /// </summary>
+        public IBaseRepository<Master_Rule> RuleRepository => _ruleRepository ?? (_ruleRepository = new SmartChefRepository<Master_Rule>(_dbContext));
+
         /// <summary>
         /// Disposes the object
         /// </summary>
