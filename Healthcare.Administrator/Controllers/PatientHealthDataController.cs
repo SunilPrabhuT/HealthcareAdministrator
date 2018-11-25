@@ -31,7 +31,7 @@ namespace Healthcare.Administrator.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
+       // [Authorize]
         [Route("GetPatientData")]
         public IHttpActionResult GetPatientData()
         {

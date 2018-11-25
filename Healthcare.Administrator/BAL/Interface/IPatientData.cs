@@ -7,18 +7,8 @@ using System.Threading.Tasks;
 
 namespace Healthcare.Administrator.BAL.Interface
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <remarks></remarks>
     public interface IPatientData
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <returns></returns>
-        /// <remarks></remarks>
-        List<PatientDataResponseDto> GetPatientData(string userName);
+        List<PatientDataResponseDto> GetPatientData();
     }
 }

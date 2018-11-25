@@ -171,8 +171,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.1\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.3\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -265,6 +265,7 @@
     <Compile Include="BAL\Interface\IPatientData.cs" />
     <Compile Include="BAL\Service\PatientData.cs" />
     <Compile Include="Controllers\PatientHealthDataController.cs" />
+    <Compile Include="Controllers\PatientRuleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\Interface\IBaseRepository.cs" />
     <Compile Include="DAL\Interface\IUnitOfWork.cs" />
@@ -272,22 +273,15 @@
     <Compile Include="DAL\Model\AspNetUser.cs" />
     <Compile Include="DAL\Model\AspNetUserClaim.cs" />
     <Compile Include="DAL\Model\AspNetUserLogin.cs" />
-    <Compile Include="DAL\Model\HealthcareAdministrator_Address.cs" />
-    <Compile Include="DAL\Model\HealthcareAdministrator_PhyscianNurse.cs" />
     <Compile Include="DAL\Model\Log.cs" />
-    <Compile Include="DAL\Model\Master_Diseases.cs" />
-    <Compile Include="DAL\Model\Master_Patient.cs" />
-    <Compile Include="DAL\Model\Master_Patient_Rule.cs" />
-    <Compile Include="DAL\Model\Master_PCP.cs" />
-    <Compile Include="DAL\Model\Master_Rule.cs" />
     <Compile Include="DAL\Model\PatientPopulationData.cs" />
     <Compile Include="DAL\Model\SmartChefDbContext.cs" />
-    <Compile Include="DAL\Model\SmsLog.cs" />
     <Compile Include="DAL\Service\SmartChefRepository.cs" />
     <Compile Include="DAL\Service\UnitOfWork.cs" />
     <Compile Include="Models\Request\PatientDataRequestDto.cs" />
     <Compile Include="Models\Response\PatientDataResponseDto.cs" />
-    <Compile Include="Models\Response\PatientRuleResponseDto.cs" />
+    <Compile Include="Models\Response\PatientMedicationRuleResponseDto.cs" />
+    <Compile Include="Models\Response\PatientVaccinationRuleResponseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnityResolver.cs" />

@@ -228,6 +228,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Healthcare.Administrator.Controllers.PatientRuleController">
+            <summary>
+            PatientRuleController
+            </summary>
+        </member>
         <member name="T:Healthcare.Administrator.Controllers.UserController">
             <summary>
             User Controller
@@ -587,6 +592,36 @@
         <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.Date4">
             <summary>
             Date4 field
+            </summary>
+        </member>
+        <member name="T:Healthcare.Administrator.Models.Response.PatientMedicationRuleResponseDto">
+            <summary>
+            PatientRuleResponseDto
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientMedicationRuleResponseDto.Medication">
+            <summary>
+            Medication field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientMedicationRuleResponseDto.IsMorningrequired">
+            <summary>
+            IsMorningrequired field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientMedicationRuleResponseDto.IsAfternoonrequired">
+            <summary> 
+            IsAfternoonrequired field
+            </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientMedicationRuleResponseDto.IsEveningrequired">
+            <summary>
+            IsEveningrequired field
+            </summary>
+        </member>
+        <member name="T:Healthcare.Administrator.Models.Response.PatientVaccinationRuleResponseDto">
+            <summary>
+            PatientVaccinationRuleResponseDto
             </summary>
         </member>
         <member name="T:Healthcare.Administrator.Startup">

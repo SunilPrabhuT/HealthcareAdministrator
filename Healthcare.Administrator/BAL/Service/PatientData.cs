@@ -28,12 +28,12 @@ namespace Healthcare.Administrator.BAL.Service
         /// Gets the Patient Data
         /// </summary>
         /// <returns></returns>
-        public List<PatientDataResponseDto> GetPatientData(string userName)
+        public List<PatientDataResponseDto> GetPatientData()
         {
             List<PatientDataResponseDto> patientDataResponseDto = new List<PatientDataResponseDto>();
             var obj= _iunitOfWork.PatientPopulationDataRepository.Get().ToList();
 
-            return _iunitOfWork.PatientPopulationDataRepository.Get(con=>con.Phy_Name==userName || con.Nurse_Name==userName).ToList().Select(ptData => new PatientDataResponseDto
+            return _iunitOfWork.PatientPopulationDataRepository.Get().ToList().Select(ptData => new PatientDataResponseDto
             {
                 PatientName = ptData?.Patient_Name,
                 MemberDependent = ptData?.Member___Dependent,
@@ -64,10 +64,5 @@ namespace Healthcare.Administrator.BAL.Service
                 Nurse = Convert.ToString(ptData?.Nurse_Name)
             }).ToList();
         }
-
-        //private List<PatientRuleResponseDto> GetRulesByPatientId(int patientId)
-        //{
-        //   // return _iunitOfWork.
-        //}
     }
 }

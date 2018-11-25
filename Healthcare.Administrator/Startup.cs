@@ -85,17 +85,17 @@ namespace Healthcare.Administrator
 
             // Api controllers with an [Authorize] attribute will be validated with JWT
            
-            app.UseJwtBearerAuthentication(
-                new JwtBearerAuthenticationOptions
-                {
+           // app.UseJwtBearerAuthentication(
+              //  new JwtBearerAuthenticationOptions
+               // {
 
-                    AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active,
-                    AllowedAudiences = new[] { audienceId },
-                    IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
-                    {
-                        new SymmetricKeyIssuerSecurityTokenProvider(issuer, audienceSecret)
-                    }
-                });
+                  //  AuthenticationMode = Microsoft.Owin.Security.AuthenticationMode.Active,
+                   // AllowedAudiences = new[] { audienceId },
+                   // IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
+                   // {
+                    //    new SymmetricKeyIssuerSecurityTokenProvider(issuer, audienceSecret)
+                   // }
+                //});
         }
         /// <summary>
         /// Configures the Webapi and Unity container resolve

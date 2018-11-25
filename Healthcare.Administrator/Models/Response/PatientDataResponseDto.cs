@@ -118,11 +118,5 @@ namespace Healthcare.Administrator.Models.Response
         /// Date4 field
         /// </summary>
         public string Date4 { get; set; }
-        /// <summary>
-        /// Gets or sets .
-        /// </summary>
-        /// <value></value>
-        /// <remarks></remarks>
-        public List<PatientRuleResponseDto> PatientRuleList { get; set; }
     }
 }
