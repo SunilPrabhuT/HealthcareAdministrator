@@ -116,7 +116,7 @@ namespace Healthcare.Administrator
         private void DependancyResolve(HttpConfiguration config)
         {
             var container = new UnityContainer();
-            // container.RegisterType<IUserDetails, User>(new TransientLifetimeManager());
+            container.RegisterType<IPatientData, PatientData>(new TransientLifetimeManager());
             container.RegisterType<ISmsData, SmsData>(new TransientLifetimeManager());
             container.RegisterType<IUnitOfWork, UnitOfWork>(new TransientLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
