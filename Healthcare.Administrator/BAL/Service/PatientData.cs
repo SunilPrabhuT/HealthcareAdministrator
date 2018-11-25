@@ -31,9 +31,9 @@ namespace Healthcare.Administrator.BAL.Service
         public List<PatientDataResponseDto> GetPatientData(string userName)
         {
             List<PatientDataResponseDto> patientDataResponseDto = new List<PatientDataResponseDto>();
-            var obj= _iunitOfWork.PatientPopulationDataRepository.Get().ToList();
+          //  var obj= _iunitOfWork.PatientPopulationDataRepository.Get().ToList();
 
-            return _iunitOfWork.PatientPopulationDataRepository.Get(con=>con.Phy_Name==userName || con.Nurse_Name==userName).ToList().Select(ptData => new PatientDataResponseDto
+            return _iunitOfWork.PatientPopulationDataRepository.Get(con=>con.Phy_Name.Replace(" ","")==userName || con.Nurse_Name.Replace(" ","")==userName).ToList().Select(ptData => new PatientDataResponseDto
             {
                 PatientId=ptData.Sl_No,
                 PatientName = ptData?.Patient_Name,
