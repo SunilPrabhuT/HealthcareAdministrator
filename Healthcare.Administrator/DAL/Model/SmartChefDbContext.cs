@@ -19,12 +19,13 @@ namespace Healthcare.Administrator.DAL.Model
         public virtual DbSet<HealthcareAdministrator_Address> HealthcareAdministrator_Address { get; set; }
         public virtual DbSet<HealthcareAdministrator_PhyscianNurse> HealthcareAdministrator_PhyscianNurse { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
+        public virtual DbSet<Master_Diseases> Master_Diseases { get; set; }
         public virtual DbSet<Master_Patient> Master_Patient { get; set; }
+        public virtual DbSet<Master_Rule> Master_Rule { get; set; }
         public virtual DbSet<PatientPopulationData> PatientPopulationDatas { get; set; }
         public virtual DbSet<SmsLog> SmsLogs { get; set; }
         public virtual DbSet<Master_Patient_Rule> Master_Patient_Rule { get; set; }
         public virtual DbSet<Master_PCP> Master_PCP { get; set; }
-        public virtual DbSet<Master_Rule> Master_Rule { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -111,6 +112,11 @@ namespace Healthcare.Administrator.DAL.Model
                 .Property(e => e.PCPId)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Master_Diseases>()
+                .HasMany(e => e.Master_Rule)
+                .WithOptional(e => e.Master_Diseases)
+                .HasForeignKey(e => e.DiseaseId);
+
             modelBuilder.Entity<Master_Patient>()
                 .Property(e => e.Id)
                 .IsUnicode(false);
@@ -131,14 +137,6 @@ namespace Healthcare.Administrator.DAL.Model
                 .Property(e => e.Id)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Master_Patient_Rule>()
-                .Property(e => e.RuleId)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Master_Patient_Rule>()
-                .Property(e => e.PatientId)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Master_PCP>()
                 .Property(e => e.Id)
                 .IsUnicode(false);
@@ -149,18 +147,6 @@ namespace Healthcare.Administrator.DAL.Model
 
             modelBuilder.Entity<Master_PCP>()
                 .Property(e => e.PCPName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Master_Rule>()
-                .Property(e => e.Id)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Master_Rule>()
-                .Property(e => e.Rule)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Master_Rule>()
-                .Property(e => e.Disease)
                 .IsUnicode(false);
         }
     }

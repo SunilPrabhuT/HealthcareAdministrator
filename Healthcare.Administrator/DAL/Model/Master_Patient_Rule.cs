@@ -14,10 +14,12 @@ namespace Healthcare.Administrator.DAL.Model
 
         [Key]
         [Column(Order = 1)]
-        public string RuleId { get; set; }
+        public Guid RuleId { get; set; }
 
         [Key]
         [Column(Order = 2)]
-        public string PatientId { get; set; }
+        public double PatientId { get; set; }
+
+        public bool? IsSelected { get; set; }
     }
 }
