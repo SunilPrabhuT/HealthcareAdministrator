@@ -104,3 +104,6 @@ c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\H
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\obj\Release\Healthcare.Administrator.dll
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\obj\Release\Healthcare.Administrator.pdb
 c:\users\sunilp\documents\visual studio 2015\Projects\Healthcare.Administrator\Healthcare.Administrator\bin\Healthcare.Administrator.XML
+D:\DeveloperBranch\developer\Healthcare.Administrator\obj\Release\Healthcare.Administrator.csprojResolveAssemblyReference.cache
+D:\DeveloperBranch\developer\Healthcare.Administrator\obj\Release\Healthcare.Administrator.dll
+D:\DeveloperBranch\developer\Healthcare.Administrator\obj\Release\Healthcare.Administrator.pdb

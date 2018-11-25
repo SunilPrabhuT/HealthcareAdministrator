@@ -12,36 +12,37 @@ namespace Healthcare.Administrator.DAL.Model
         {
         }
 
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<HealthcareAdministrator_Address> HealthcareAdministrator_Address { get; set; }
         public virtual DbSet<HealthcareAdministrator_PhyscianNurse> HealthcareAdministrator_PhyscianNurse { get; set; }
-        public virtual DbSet<Log> Logs { get; set; }
+        public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<Master_Diseases> Master_Diseases { get; set; }
         public virtual DbSet<Master_Patient> Master_Patient { get; set; }
         public virtual DbSet<Master_Rule> Master_Rule { get; set; }
-        public virtual DbSet<PatientPopulationData> PatientPopulationDatas { get; set; }
-        public virtual DbSet<SmsLog> SmsLogs { get; set; }
+        public virtual DbSet<PatientPopulationData> PatientPopulationData { get; set; }
+        public virtual DbSet<SmsLog> SmsLog { get; set; }
         public virtual DbSet<Master_Patient_Rule> Master_Patient_Rule { get; set; }
         public virtual DbSet<Master_PCP> Master_PCP { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AspNetRole>()
+            modelBuilder.Entity<AspNetRoles>()
                 .HasMany(e => e.AspNetUsers)
                 .WithMany(e => e.AspNetRoles)
                 .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
 
-            modelBuilder.Entity<AspNetUser>()
+            modelBuilder.Entity<AspNetUsers>()
                 .HasMany(e => e.AspNetUserClaims)
-                .WithRequired(e => e.AspNetUser)
+                .WithRequired(e => e.AspNetUsers)
                 .HasForeignKey(e => e.UserId);
 
-            modelBuilder.Entity<AspNetUser>()
+            modelBuilder.Entity<AspNetUsers>()
                 .HasMany(e => e.AspNetUserLogins)
-                .WithRequired(e => e.AspNetUser)
+                .WithRequired(e => e.AspNetUsers)
                 .HasForeignKey(e => e.UserId);
 
             modelBuilder.Entity<HealthcareAdministrator_Address>()
