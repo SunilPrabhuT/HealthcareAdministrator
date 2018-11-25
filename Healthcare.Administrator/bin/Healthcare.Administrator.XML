@@ -199,6 +199,42 @@
             <returns></returns>
             <remarks></remarks>
         </member>
+        <member name="T:Healthcare.Administrator.BAL.Interface.ISmsData">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Interface.ISmsData.SaveSms(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageText"></param>
+            /// <param name="smsId"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Interface.ISmsData.SaveReplySms(System.String,System.String,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Interface.ISmsData.GetNewReplySms">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Interface.ISmsData.GetAllReplySms">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
         <member name="T:Healthcare.Administrator.BAL.Service.PatientData">
             <summary>
             PatientData
@@ -219,6 +255,40 @@
             Gets the Patient Data
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.SmsData.#ctor(Healthcare.Administrator.Interface.IUnitOfWork)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.SmsData.GetNewReplySms">
+            <summary></summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.SmsData.GetAllReplySms">
+            <summary></summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.SmsData.SaveReplySms(System.String,System.String,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="smsId"></param>
+            <param name="smsText"></param>
+            <param name="smsDate"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.BAL.Service.SmsData.SaveSms(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageText"></param>       
+            <returns></returns>
+            <remarks></remarks>
         </member>
         <member name="T:Healthcare.Administrator.Controllers.PatientHealthDataController">
             <summary>
@@ -241,6 +311,40 @@
             Gets the Patient Data
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Healthcare.Administrator.Controllers.SMSController">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.SMSController.#ctor(Healthcare.Administrator.BAL.Interface.ISmsData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Healthcare.Administrator.Controllers.SMSController" /> class. 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.SMSController.SendSMS(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.SMSController.ReceiveSMS(Twilio.AspNet.Common.SmsRequest)">
+            <summary>
+            
+            </summary>
+            <param name="incomingMessage"></param>
+            <returns></returns>
+            <remarks></remarks>    
+        </member>
+        <member name="M:Healthcare.Administrator.Controllers.SMSController.GetReplySMS">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
         </member>
         <member name="T:Healthcare.Administrator.Controllers.UserController">
             <summary>
@@ -659,6 +763,82 @@
             <summary>
             Date4 field
             </summary>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientDataResponseDto.PatientRuleList">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Healthcare.Administrator.Models.Response.PatientRuleResponseDto">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientRuleResponseDto.ID">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientRuleResponseDto.RuleId">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientRuleResponseDto.PatientID">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.PatientRuleResponseDto.RuleName">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Healthcare.Administrator.Models.Response.PatientRuleResponseDto.IsSelected" -->
+        <member name="T:Healthcare.Administrator.Models.Response.SmsResponseDto">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.SmsResponseDto.SmsID">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.SmsResponseDto.SmsText">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.SmsResponseDto.IsSend">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Healthcare.Administrator.Models.Response.SmsResponseDto.Date">
+            <summary>
+            Gets or sets .
+            </summary>
+            <value></value>
+            <remarks></remarks>
         </member>
         <member name="T:Healthcare.Administrator.Startup">
             <summary>
